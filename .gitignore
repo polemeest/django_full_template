@@ -12,6 +12,8 @@ logs/
 *.toc
 *.out
 *.pickle
+*.env
 celerybeat-schedule                                                                     
 .ipynb_checkpoints
 env/
+src/.env
