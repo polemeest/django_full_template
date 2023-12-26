@@ -2,5 +2,5 @@ from django.urls import path, include
 
 
 urlpatterns = [
-   # path(),
+   path('users', include('apps.users.urls', namespace='user_router')),
 ]

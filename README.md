@@ -24,3 +24,5 @@ sudo systemctl status gunicorn
 sudo systemctl daemon-reload
 sudo systemctl restart gunicorn
 ```
+
+Create a file ".env_dev" near ".env", copy all the names and configure them as you need
