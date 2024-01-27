@@ -4,13 +4,13 @@ from django.contrib.auth.base_user import BaseUserManager
 class UserManager(BaseUserManager):
     use_in_migrations = True
 
-    def _create_user(self, email, phone=None, password=None, first_name="Имя", last_name="Фамилия", user_type=None,
+    def _create_user(self, email, password=None, first_name="Имя", last_name="Фамилия", user_type=None,
                      **extra_fields):
         """
         Creates and saves a User with the given email or phone and password.
         """
-        if not email and not phone:
-            raise ValueError('Email or phone is required')
+        if not email:
+            raise ValueError('Email is required')
 
         if not password:
             raise ValueError('Password is required')
@@ -19,7 +19,6 @@ class UserManager(BaseUserManager):
 
         user = self.model(
             email=email,
-            phone=phone,
             first_name=first_name,
             last_name=last_name,
             user_type=user_type,

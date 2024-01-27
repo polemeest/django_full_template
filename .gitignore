@@ -17,3 +17,4 @@ celerybeat-schedule
 .ipynb_checkpoints
 env/
 src/.env_dev
+src/apps/*/migrations/0*

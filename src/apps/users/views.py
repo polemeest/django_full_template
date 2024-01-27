@@ -10,4 +10,4 @@ class UserListView(ListAPIView):
     """Получить всех пользователей"""
     serializer_class = UserSerializer
     queryset = User.objects.all()
-    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+    permission_classes = [permissions.IsAuthenticated]

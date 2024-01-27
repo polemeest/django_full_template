@@ -8,6 +8,7 @@ from django.db import models
 from django.db.models import Avg
 
 from apps.users.manager import UserManager
+from phonenumber_field.modelfields import PhoneNumberField
 
 USER_TYPE_CHOICES = (
     ("User", "Пользователь"),
@@ -18,6 +19,7 @@ USER_TYPE_CHOICES = (
 class User(AbstractBaseUser, PermissionsMixin):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     email = models.EmailField(verbose_name="email", unique=True, null=True, blank=True)
+    phone = PhoneNumberField(null=True, blank=True, max_length=17)
     first_name = models.CharField(
         verbose_name="Имя", max_length=255, blank=False, null=False
     )
